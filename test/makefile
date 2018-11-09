@@ -2,7 +2,7 @@ CXX = g++
 CPPFLAGS = -std=c++11 -I../include
 LDFLAGS = -lpthread -lrt
 
-BIN = systimer_test delegate_test msgqueue_test
+BIN = systimer_test delegate_test msgqueue_test schedule_test
 
 all:${BIN}
 
@@ -14,6 +14,9 @@ delegate_test:
 
 msgqueue_test:
 	${CXX} ${CPPFLAGS} ${LDFLAGS} ../src/msgqueue.cpp msgqueue_test.cpp -o $@
+
+schedule_test:
+	${CXX} ${CPPFLAGS} ${LDFLAGS} ../src/schedule.cpp schedule_test.cpp -o $@
 
 clean:
 	rm -f ${BIN}
